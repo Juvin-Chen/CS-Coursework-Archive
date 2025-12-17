@@ -1,0 +1,17 @@
+问题1：流操作与代码复用
+观察 print() 与 save() 的实现，均在内部调用 write() ：
+（1） write() 的参数类型是 std::ostream& ，它为什么能同时接受 std::cout 和 std::ofstream 对象作为实参？
+    
+（2）如果要把结果写到其他设备，只要该设备也提供 std::ostream 接口，还需改动 write() 吗？
+问题2：异常处理与捕获
+在代码中找到两处 throw 语句，说明：
+（1）什么情况下会抛出异常；
+（2）异常被谁捕获、做了哪些处理。
+问题3：替代写法
+函数 app 中 std::sort(contestants.begin(), contestants.end(), cmp_by_solve); 参数
+cmp_by_solve 换成下面的lambda表达式是否可以？功能、性能、结果是否一致？
+问题4：数据完整性与代码健壮性
+把 in_file 改成 "./data_bad.txt" （内含空白行或字段缺失），重新编译运行：
+（1）观察运行结果有什么问题？给出测试截图并分析原因。
+（2）思考：如何修改函数 std::vector<Contestant> load(const std::string& filename) ，使其提示出
+错行号并跳过有问题的数据行，同时让程序继续执行？（选答*）
