@@ -5,7 +5,7 @@
 #include"contestant.hpp"
 #include"utils.hpp"
 
-const std::string in_file="./data.txt";
+const std::string in_file="./data_bad.txt";
 const std::string out_file="./ans.txt";
 
 void app(){

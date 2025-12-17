@@ -6,6 +6,7 @@
 #include<string>
 #include<vector>
 #include"contestant.hpp"
+#include<sstream> //加一个功能，见task1.txt的最后一问
 
 //ACM排序规则：先按解题数降序，再按罚时升序
 inline bool cmp_by_solve(const Contestant& a,const Contestant& b){
@@ -44,12 +45,21 @@ inline std::vector<Contestant> load(const std::string& filename){
     std::vector<Contestant> v;
     Contestant t;
     int seq;
-    //这里is>>会根据读到的内容和读取变量
-    while(is>>seq>>t) v.push_back(t);
+    /*
+    修改前：
+    while(is>>seq>>t) v.push_back(t); //这里is>>会根据读到的内容和读取变量
+    */
+    //修改后对每行数据进行了安全检查
+    int num=1;
+    while(std::getline(is,line)){
+        if(line.empty()){
+            std::cerr<<"ERROR! 行号为:"<<num<<"\n";
+            continue;
+        }
+        std::istringstream iss(line);
+        if(iss>>seq>>t) v.push_back(t);
+        else std::cerr<<"ERROR! 行号为:"<<num<<"\n";
+        num++;
+    }
     return v; 
 }
-
-
-
-
-

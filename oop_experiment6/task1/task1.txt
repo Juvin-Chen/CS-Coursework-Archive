@@ -30,10 +30,30 @@ return a.solved != b.solved ? a.solved > b.solved: a.penalty < b.penalty;}
     但是接下来的该读到int的时候读到了string类型的name，就读取失败了，退出。后面三个人的数据直接就没读进去。
 （2）思考：如何修改函数 std::vector<Contestant> load(const std::string& filename) ，使其提示出错行号并跳过有问题的数据行，同时让程序继续执行？（选答*）
 修改：
-std::vector<Contestant> load(const std::string& filename){
-    //从while(is>>seq>>t)开始修改，之前的代码同上
-    bool go_on=true;
-    while(go_on){
-        auto var=
+    我想的是每行读取，然后放到sstream变量中判断该行是否正确
+    inline std::vector<Contestant> load(const std::string& filename){
+        std::ifstream is(filename); 
+        if(!is) throw std::runtime_error("fail to open"+filename);
+        std::string line;
+        std::getline(is,line); //跳过标题，这里getline的第一个参数只是需要一个输入流对象
+        std::vector<Contestant> v;
+        Contestant t;
+        int seq;
+        /*
+        修改前：
+        while(is>>seq>>t) v.push_back(t); //这里is>>会根据读到的内容和读取变量
+        */
+        //修改后对每行数据进行了安全检查
+        int num=1;
+        while(std::getline(is,line)){
+            if(line.empty()){
+                std::cerr<<"ERROR! 行号为:"<<num<<"\n";
+                continue;
+            }
+            std::istringstream iss(line);
+            if(iss>>seq>>t) v.push_back(t);
+            else std::cerr<<"ERROR! 行号为:"<<num<<"\n";
+            num++;
+        }
+        return v; 
     }
-}
