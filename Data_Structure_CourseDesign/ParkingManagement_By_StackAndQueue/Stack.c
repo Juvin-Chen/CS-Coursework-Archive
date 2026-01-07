@@ -3,7 +3,7 @@
 
 //顺序栈的初始化
 Status InitStack(Stack *s){
-    s->base=(int*)malloc(sizeof(int)*MAXSIZE);
+    s->base=(car*)malloc(sizeof(car)*MAXSIZE);
     if(!s->base) exit(OVERFLOW);
     s->top=s->base;
     s->stacksize=MAXSIZE;
@@ -26,7 +26,4 @@ Status Pop(Stack *s,car *e){
     return OK;
 }
 
-//获取栈顶元素
-car GetTop(Stack *s){
-    if(s->top!=s->base) return *(s->top-1);
-}
+

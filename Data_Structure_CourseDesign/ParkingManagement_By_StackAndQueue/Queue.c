@@ -29,7 +29,3 @@ Status DeQueue(Queue *q,car* e){
     return OK;
 }
 
-//取链队的队头元素
-car GetHead(Queue *q){
-    if(q->front!=q->rear) return q->front->next->data;
-}
