@@ -24,13 +24,20 @@
 
 ## Courses & Studies
 
-### 数据结构 / Data Structures
+#### LevOJ / NUIST's Online Judge
+* **`程序设计基础`**
+* **`程序设计实践`**
+* **`算法设计与分析`**
+* **`说明`**:  my personal solution ~
+
+#### C++ 与面向对象 / C++ & OOP
+* **`Study_of_Cplus`**: Basic Syntax of C++
+* **`Study_of_OOP-C++`**: OOP's experiments
+
+#### 数据结构 / Data Structures
 * **`Data_Structure_experiment_C`**: Data Structures's experiments
 * **`Study_of_DataStructure`**:  some study notes and practice code 
 
-### C++ 与面向对象 / C++ & OOP
-* **`Study_of_Cplus`**: Basic Syntax of C++
-* **`Study_of_OOP-C++`**: OOP's experiments
 
 ---
 > **备注**: 部分文件夹的后缀为该模块使用的语言。
