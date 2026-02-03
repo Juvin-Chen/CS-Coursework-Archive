@@ -1,4 +1,4 @@
-# NUIST Computer Science Student
+# Undergraduate Student majoring in Computer Science and Technology
 2024
 
 > Courseworkのrepo😈 
