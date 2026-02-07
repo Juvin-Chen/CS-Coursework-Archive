@@ -13,10 +13,11 @@ public:
     void add_employee(const Employee &newe);
     void delete_employee(int id);
     void show_all();
+
 private:
     SqList employees;
 
-private: 
+private:
     bool compare(const Employee &a, const Employee &b, Employee::KeyType type);
     int partition(int low, int high, Employee::KeyType type);
     void quickSort(int low, int high, Employee::KeyType type);

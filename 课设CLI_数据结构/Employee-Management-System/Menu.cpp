@@ -3,13 +3,13 @@
 
 using namespace std;
 
-//启动系统主循环
+// 启动系统主循环
 void Menu::run() {
 
     mgr.add_employee(Employee(1003, "Alice", "Female", "Manager", "13800138000", "Beijing"));
-    mgr.add_employee(Employee(1001, "John",  "Male",   "Coder",   "13900000000", "Shanghai"));
-    mgr.add_employee(Employee(1002, "Lisi",  "Female", "HR",      "13612345678", "Guangzhou"));
-    mgr.add_employee(Employee(1005, "Alex",  "Male",   "Cleaner", "13311112222", "Shenzhen"));
+    mgr.add_employee(Employee(1001, "John", "Male", "Coder", "13900000000", "Shanghai"));
+    mgr.add_employee(Employee(1002, "Lisi", "Female", "HR", "13612345678", "Guangzhou"));
+    mgr.add_employee(Employee(1005, "Alex", "Male", "Cleaner", "13311112222", "Shenzhen"));
 
     cout << " [main指令] 4条测试数据已加载" << endl;
 
@@ -28,51 +28,51 @@ void Menu::run() {
         cout << "请输入操作编号: ";
 
         int choice;
-        cin>>choice; 
+        cin >> choice;
         if (choice < 0 || choice > 6) {
             cout << ">>> 输入数字不对！请输入 0 到 6 之间的数字。" << endl;
-            continue; 
+            continue;
         }
 
         switch (choice) {
-        case 1: 
-            handleAdd(); 
+        case 1:
+            handleAdd();
             break;
-        case 2: 
-            handleDelete(); 
+        case 2:
+            handleDelete();
             break;
-        case 3: 
-            handleUpdate(); 
+        case 3:
+            handleUpdate();
             break;
-        case 4: 
-            handleSearch(); 
+        case 4:
+            handleSearch();
             break;
-        case 5: 
-            handleSort(); 
+        case 5:
+            handleSort();
             break;
-        case 6: 
-            mgr.show_all(); 
+        case 6:
+            mgr.show_all();
             break;
-        case 0: 
-            cout << "系统已退出！" << endl; 
+        case 0:
+            cout << "系统已退出！" << endl;
             return;
-        default: 
-            cout << "输入无效，请重新选择！" << endl; 
+        default:
+            cout << "输入无效，请重新选择！" << endl;
             break;
         }
     }
 }
 
-//处理添加员工
+// 处理添加员工
 void Menu::handleAdd() {
     Employee e;
     cout << "\n[新增员工]" << endl;
     cin >> e;
-    //调用 Manager 的添加功能
+    // 调用 Manager 的添加功能
     mgr.add_employee(e);
 }
 
-//处理删除员工
+// 处理删除员工
 void Menu::handleDelete() {
     int id;
     cout << "请输入要删除的员工ID: ";
@@ -80,7 +80,7 @@ void Menu::handleDelete() {
     mgr.delete_employee(id);
 }
 
-//处理修改员工
+// 处理修改员工
 void Menu::handleUpdate() {
     int id;
     cout << "\n--- [修改信息] ---" << endl;
@@ -89,7 +89,7 @@ void Menu::handleUpdate() {
     mgr.update_employee(id);
 }
 
-//处理查找员工
+// 处理查找员工
 void Menu::handleSearch() {
     cout << "\n--- [查询员工] ---" << endl;
     cout << "请选择查询方式:" << endl;
@@ -113,7 +113,7 @@ void Menu::handleSearch() {
     }
 
     // 调用 Manager 查找，接收返回的指针
-    Employee* result = mgr.select_employee(type, value);
+    Employee *result = mgr.select_employee(type, value);
 
     if (result != nullptr) {
         cout << "\n 查询成功！员工信息如下：" << endl;
@@ -125,7 +125,7 @@ void Menu::handleSearch() {
     }
 }
 
-//处理排序
+// 处理排序
 void Menu::handleSort() {
     cout << "\n[员工排序]" << endl;
     cout << "请选择排序依据:" << endl;
@@ -139,18 +139,24 @@ void Menu::handleSort() {
 
     Employee::KeyType type;
     switch (choice) {
-        case 1: type = Employee::KeyType::ID; break;
-        case 2: type = Employee::KeyType::NAME; break;
-        case 3: type = Employee::KeyType::ROLE; break;
-        default: 
-            cout << " 无效选择，默认按 ID 排序。" << endl;
-            type = Employee::KeyType::ID;
-            break;
+    case 1:
+        type = Employee::KeyType::ID;
+        break;
+    case 2:
+        type = Employee::KeyType::NAME;
+        break;
+    case 3:
+        type = Employee::KeyType::ROLE;
+        break;
+    default:
+        cout << " 无效选择，默认按 ID 排序。" << endl;
+        type = Employee::KeyType::ID;
+        break;
     }
 
     mgr.sort_employee(type);
-    
-    //排序后自动显示一下结果
+
+    // 排序后自动显示一下结果
     cout << "排序完成，列表如下：" << endl;
     mgr.show_all();
 }

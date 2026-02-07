@@ -3,11 +3,11 @@
 
 class Menu {
 public:
-    void run(); //启动函数
+    void run(); // 启动函数
 
 private:
-    Manager mgr; //Menu持有一个Manager对象
-    
+    Manager mgr; // Menu持有一个Manager对象
+
     void handleAdd();
     void handleDelete();
     void handleUpdate();
