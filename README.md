@@ -11,7 +11,7 @@
 
 * **OOP CourseDesign（C++课程设计）**
     * **项目名称**: [Campus Rainhub](https://github.com/Juvin-Chen/CampusRainhub)
-    * **简介 **: GUI实现，Qt / MySQL / CMake（完整代码见独立仓库）
+    * **简介**: GUI实现，Qt / MySQL / CMake（完整代码见独立仓库）
 
 * **Programming Practice CourseDesign （程序设计实践课程设计）**
     * **项目名称**: [EvoBrawl](https://github.com/Juvin-Chen/CS_Study/tree/main/课设GUI_程序设计实践)
