@@ -1,7 +1,7 @@
 # Undergraduate Student majoring in Computer Science and Technology
-2024级本科，虽然其实25年才真正开始学习...
+2024级本科，虽然其实我大二才开始认真学 cry...
 
-> Coursework repo😈 
+> Archive of All University Coursework in Computer Science | 所有大学专业课程学习和作业的存档
 
 ## About this repo
 
