@@ -53,9 +53,9 @@ Thumbs.db
 *.temp
 .clang-format
 
-# ============================================
+
 # Java Language Additions
-# ============================================
+
 
 # Java compiled class files
 *.class
@@ -74,11 +74,11 @@ Thumbs.db
 hs_err_pid*
 replay_pid*
 
-# ============================================
-# Java Build Tools & IDEs (IntelliJ / Maven / Gradle)
-# ============================================
 
-# IntelliJ IDEA (针对你图片里的 .iml 文件)
+# Java Build Tools & IDEs (IntelliJ / Maven / Gradle)
+
+
+# IntelliJ IDEA (针对 .iml 文件)
 *.iml
 *.iws
 .idea/
@@ -98,9 +98,7 @@ buildNumber.properties
 .gradle/
 /build/
 
-# ============================================
 # VS Code Java Specific
-# ============================================
 .project
 .classpath
 .settings/
