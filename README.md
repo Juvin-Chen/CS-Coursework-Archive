@@ -10,7 +10,7 @@
 ## Projects 
 
 * **OOP CourseDesign（C++课程设计）**
-    * **项目名称**: [Campus Rainhub](https://github.com/Juvin-Chen/CampusRainhub)
+    * **项目名称**: [Campus Rainhub](https://github.com/Juvin-Chen/Campus-RainHub)
     * **简介**: GUI实现，Qt / MySQL / CMake（完整代码见独立仓库）
 
 * **Programming Practice CourseDesign （程序设计实践课程设计）**
