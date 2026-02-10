@@ -1,8 +1,5 @@
 import java.io.*;
 
-import static com.sun.deploy.cache.Cache.copyFile;
-import static com.sun.deploy.cache.Cache.putLapData;
-
 public class Testbuffer {
     public static void main(String[] args) {
         //使用字节缓冲区提高读写效率 ,buffer默认数组大小是8192

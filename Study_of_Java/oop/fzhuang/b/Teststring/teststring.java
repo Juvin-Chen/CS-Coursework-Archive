@@ -31,7 +31,7 @@ public class teststring {
         //index是从前往后找，lastIndexOf从后往前找
 
         String s="";
-        String s1="how are you?";
+        String s1_="how are you?";
         System.out.println(s1.startsWith("how"));  //是否以how开头
         System.out.println(s1.endsWith("you"));  //是否you结尾
         s=s1.substring(4); //提取子字符串，从下标4开始一直到结尾
@@ -40,10 +40,10 @@ public class teststring {
         System.out.println(s);
         s=s1.toLowerCase(); //Lower Upper一个是转小写一个转大写
         System.out.println(s);
-        String s2=" how old are you ";
+        String s2_=" how old are you ";
         s=s2.trim(); //去除字符串首尾的空格，注意：中间的空格不能去除
         System.out.println(s);
-        String s3="I love";
+        String s3_="I love";
     }
 }
 

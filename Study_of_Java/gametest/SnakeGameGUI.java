@@ -36,7 +36,7 @@ public class SnakeGameGUI extends JPanel implements KeyListener {
 
     private void move() {
         Point head = snake.getFirst();
-        Point next = new Point(head);
+        Point next = new Point(head.x, head.y);
         switch (direction) {
             case KeyEvent.VK_UP: next.y--; break;
             case KeyEvent.VK_DOWN: next.y++; break;
@@ -54,20 +54,20 @@ public class SnakeGameGUI extends JPanel implements KeyListener {
             snake.removeLast();
         }
     }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.GREEN);
-        for (Point p : snake)
-            g.fillRect(p.x * CELL_SIZE, p.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-        g.setColor(Color.RED);
-        g.fillRect(food.x * CELL_SIZE, food.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-        if (gameOver) {
-            g.setColor(Color.WHITE);
-            g.drawString("游戏结束！得分：" + (snake.size() - 1), 60, HEIGHT * CELL_SIZE / 2);
-        }
-    }
+    // 绘制游戏界面   这边有错误！！
+    // @Override
+    // protected void paintComponent(Graphics g) {
+    //     super.paintComponent(g);
+    //     g.setColor(Color.GREEN);
+    //     for (Point p : snake)
+    //         g.fillRect(p.x * CELL_SIZE, p.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    //     g.setColor(Color.RED);
+    //     g.fillRect(food.x * CELL_SIZE, food.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    //     if (gameOver) {
+    //         g.setColor(Color.WHITE);
+    //         g.drawString("游戏结束！得分：" + (snake.size() - 1), 60, HEIGHT * CELL_SIZE / 2);
+    //     }
+    // }
 
     @Override
     public void keyPressed(KeyEvent e) {
