@@ -5,6 +5,6 @@
 
 ## About this repo
 
-* **Main Languages**: C / C++ / Python / Java
+* **Main Languages**: C / C++ / Java / Python
   
 **备注**: 部分文件夹的后缀为该模块使用的语言。
