@@ -1,9 +1,10 @@
+
 /*
 终止线程我们一般不使用JDK提供的stop()/destroy()方法(它们本身也被JDK废弃了)。通常的做法是提供一个boolean型的终止变量，当这个变量置为false，则终止线程的运行。
  */
 import java.io.IOException;
 
-public class Teststop implements Runnable{
+public class Teststop implements Runnable {
 
     public static void main(String[] args) throws IOException {
         System.out.println("主线程开始运行");
@@ -16,11 +17,12 @@ public class Teststop implements Runnable{
     }
 
     private boolean running = true; // 用于控制线程的运行状态
+
     @Override
     public void run() {
         System.out.println("线程开始运行");
         while (running) {
-            for(int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 // 模拟线程的工作
                 System.out.println("线程" + Thread.currentThread().getName() + "正在运行，i=" + i);
             }
@@ -34,10 +36,11 @@ public class Teststop implements Runnable{
         }
         System.out.println("线程停止运行");
     }
+
     public void stop() {
         // 停止线程的逻辑
         // 这里可以设置一个标志位来控制线程的停止
-        this.running=false;
+        this.running = false;
     }
 
 }

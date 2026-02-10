@@ -19,18 +19,18 @@ main方法是单线程执行的，必须等服务器端代码执行完毕（或�
 
 public class TCPA {
     public static void main(String[] args) {
-        //创建服务端
+        // 创建服务端
         System.out.println("服务端启动，等待监听");
-        //创建ServerSocket对象
-        //指定监听的端口号
+        // 创建ServerSocket对象
+        // 指定监听的端口号
         try {
-            ServerSocket serverSocket = new ServerSocket(8888); //监听8888端口，此时线程阻塞，等待客户端连接
-            //调用accept方法，等待客户端连接，accept是一个阻塞方法
-            Socket socket = serverSocket.accept(); //返回的这个Socket对象，就是客户端的Socket对象
-            System.out.println("有客户端连接了"); //当有客户端连接时，程序才会继续往下执行，会解除阻塞
-            //通过客户端对应的Socket对象中的输入流对象，获取客户端发送过来的消息
+            ServerSocket serverSocket = new ServerSocket(8888); // 监听8888端口，此时线程阻塞，等待客户端连接
+            // 调用accept方法，等待客户端连接，accept是一个阻塞方法
+            Socket socket = serverSocket.accept(); // 返回的这个Socket对象，就是客户端的Socket对象
+            System.out.println("有客户端连接了"); // 当有客户端连接时，程序才会继续往下执行，会解除阻塞
+            // 通过客户端对应的Socket对象中的输入流对象，获取客户端发送过来的消息
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            System.out.println(br.readLine()); //读取客户端发送过来的一行字符串
+            System.out.println(br.readLine()); // 读取客户端发送过来的一行字符串
 
         } catch (Exception e) {
             e.printStackTrace();

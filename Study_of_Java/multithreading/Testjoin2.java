@@ -3,11 +3,11 @@
 这个案例相对前面来讲的区别就是它直接将另一个线程的创建放在了run方法中，从而不需要在main中创建又需要在类中写一个方法再进行传递，主要是看事情的逻辑方式判断使用哪种join方式
  */
 
-class father implements Runnable{
+class father implements Runnable {
     @Override
     public void run() {
         System.out.println("lack smoke");
-        Thread t=new Thread(new son());
+        Thread t = new Thread(new son());
         t.start();
         try {
             t.join(); // 等待儿子买烟回来
@@ -20,7 +20,8 @@ class father implements Runnable{
         System.out.println("son buy the smoke back successfully");
     }
 }
-class son implements Runnable{
+
+class son implements Runnable {
     @Override
     public void run() {
         System.out.println("go to buy smoke");
@@ -34,10 +35,11 @@ class son implements Runnable{
         }
     }
 }
+
 public class Testjoin2 {
     public static void main(String[] args) {
         System.out.println("father start to smoke");
-        Thread t=new Thread(new father());
+        Thread t = new Thread(new father());
         t.start();
     }
 }
