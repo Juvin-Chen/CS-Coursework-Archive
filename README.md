@@ -1,5 +1,5 @@
 # Undergraduate Student majoring in Computer Science and Technology
-2024级本科，有点后悔我大二才开始认真学...
+2024级本科，有点后悔大二才开始认真学...
 
 > Archive of All University Coursework in Computer Science | 所有大学专业课程学习和作业的存档
 
